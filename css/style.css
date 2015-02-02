@@ -1,0 +1,138 @@
+html, body {
+    width: 100%;
+    min-height: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+html {
+    max-height: 100%;
+    font-size: 62.5%;
+    -webkit-font-smoothing: antialiased;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+a{
+    text-decoration: none;
+}
+.hide{
+    display: none;
+}
+#header {
+    position: relative;
+    display: table;
+    text-align: center;
+    width: 100%;
+    height: 60%;
+    padding: 24px 0;
+    margin-bottom: 72px;
+    box-sizing: border-box;
+}
+#footer {
+    margin-top: 72px;
+    padding: 124px 0 72px;
+    position: relative;
+    width: 100%;
+    height: 60%;
+    display: table;
+    z-index: 1;
+}
+.home_header, .home_footer {
+    background: url(../assets/images/banner.jpg);
+}
+.blog_background {
+    background-repeat: no-repeat;
+    background-position: center;
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-attachment: fixed;
+}
+.banner_mask:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.35);
+}
+.svg_wrapper {
+    width: 100%;
+    height: 50%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+#main {
+    width: 64%;
+    max-width: 76rem;
+    margin: 0 auto;
+}
+.post_in_list {
+    position: relative;
+    margin-bottom: 2rem;
+    overflow: hidden;
+}
+.post_in_list a{color:#fff;}
+.post_in_list p{margin: 0}
+.post_in_list .post_excerpt  img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+.info_mask {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    height: 10rem;
+    background: linear-gradient(transparent, #111);
+}
+.mask_wrapper {
+    padding-left: 1rem;
+}
+.post_title {
+    color: #fff;
+    font-size: 3.2rem;
+    /*line-height: 4.6rem;*/
+    /*margin-top: 1.2rem;*/
+    margin: 1.2rem 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.post_meta span {
+    display: inline-block;
+    color: #fff;
+    font-size: 1.6rem;
+}
+.post_tags{margin-left: .5rem;}
+.post_tags a{
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+    display: inline-block;
+    margin-left: .6rem;
+    padding:0rem 1rem;
+    background: rgba(255,255,255,.3);
+    border-radius: .3rem;
+
+}
+.post_tags a:hover{
+     background: rgba(255,255,255,.2);
+}
+#footer .svg_wrapper {
+    bottom: auto;
+    top: 0;
+}
+.decor {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    bottom: -1px;
+}
+#footer .decor {
+    top: -1px
+}
+
+
