@@ -1,0 +1,125 @@
+/*
+SCSS variables are information about icon's compiled state, stored under its original file name
+
+.icon-home {
+  width: $icon-home-width;
+}
+
+The large array-like variables contain all information about a single icon
+$icon-home: x y offset_x offset_y width height total_width total_height image_path;
+
+At the bottom of this section, we provide information about the spritesheet itself
+$spritesheet: width height image $spritesheet-sprites;
+*/
+$badge-name: 'badge';
+$badge-x: 0px;
+$badge-y: 170px;
+$badge-offset-x: 0px;
+$badge-offset-y: -170px;
+$badge-width: 90px;
+$badge-height: 88px;
+$badge-total-width: 234px;
+$badge-total-height: 258px;
+$badge-image: 'sprite@2x.png';
+$badge: 0px 170px 0px -170px 90px 88px 234px 258px 'sprite@2x.png' 'badge';
+$clock-name: 'clock';
+$clock-x: 90px;
+$clock-y: 110px;
+$clock-offset-x: -90px;
+$clock-offset-y: -110px;
+$clock-width: 50px;
+$clock-height: 60px;
+$clock-total-width: 234px;
+$clock-total-height: 258px;
+$clock-image: 'sprite@2x.png';
+$clock: 90px 110px -90px -110px 50px 60px 234px 258px 'sprite@2x.png' 'clock';
+$like-name: 'like';
+$like-x: 174px;
+$like-y: 26px;
+$like-offset-x: -174px;
+$like-offset-y: -26px;
+$like-width: 38px;
+$like-height: 34px;
+$like-total-width: 234px;
+$like-total-height: 258px;
+$like-image: 'sprite@2x.png';
+$like: 174px 26px -174px -26px 38px 34px 234px 258px 'sprite@2x.png' 'like';
+$remind-name: 'remind';
+$remind-x: 212px;
+$remind-y: 0px;
+$remind-offset-x: -212px;
+$remind-offset-y: 0px;
+$remind-width: 22px;
+$remind-height: 26px;
+$remind-total-width: 234px;
+$remind-total-height: 258px;
+$remind-image: 'sprite@2x.png';
+$remind: 212px 0px -212px 0px 22px 26px 234px 258px 'sprite@2x.png' 'remind';
+$sand-name: 'sand';
+$sand-x: 140px;
+$sand-y: 60px;
+$sand-offset-x: -140px;
+$sand-offset-y: -60px;
+$sand-width: 34px;
+$sand-height: 50px;
+$sand-total-width: 234px;
+$sand-total-height: 258px;
+$sand-image: 'sprite@2x.png';
+$sand: 140px 60px -140px -60px 34px 50px 234px 258px 'sprite@2x.png' 'sand';
+$spritesheet-width: 234px;
+$spritesheet-height: 258px;
+$spritesheet-image: 'sprite@2x.png';
+$spritesheet-sprites: $badge $clock $like $remind $sand;
+$spritesheet: 234px 258px 'sprite@2x.png' $spritesheet-sprites;
+
+/*
+The provided mixins are intended to be used with the array-like variables
+
+.icon-home {
+  @include sprite-width($icon-home);
+}
+
+.icon-email {
+  @include sprite($icon-email);
+}
+*/
+@mixin sprite-width($sprite) {
+  width: nth($sprite, 5);
+}
+
+@mixin sprite-height($sprite) {
+  height: nth($sprite, 6);
+}
+
+@mixin sprite-position($sprite) {
+  $sprite-offset-x: nth($sprite, 3);
+  $sprite-offset-y: nth($sprite, 4);
+  background-position: $sprite-offset-x  $sprite-offset-y;
+}
+
+@mixin sprite-image($sprite) {
+  $sprite-image: nth($sprite, 9);
+  background-image: url(#{$sprite-image});
+}
+
+@mixin sprite($sprite) {
+  @include sprite-image($sprite);
+  @include sprite-position($sprite);
+  @include sprite-width($sprite);
+  @include sprite-height($sprite);
+}
+
+/*
+The `sprites` mixin generates identical output to the CSS template
+  but can be overridden inside of SCSS
+
+@include sprites($spritesheet-sprites);
+*/
+@mixin sprites($sprites) {
+  @each $sprite in $sprites {
+    $sprite-name: nth($sprite, 10);
+    .#{$sprite-name} {
+      @include sprite($sprite);
+    }
+  }
+}
