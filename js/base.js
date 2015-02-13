@@ -259,7 +259,8 @@ $(document).ready(function() {
 
 
     if ($('body').hasClass('post-template')) {
-        console.log('处理图标');
+        // console.log('处理图标');
+        $('img[alt="cover"]').addClass('cover-image');
         General.addIcons();
     }
 

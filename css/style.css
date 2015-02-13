@@ -988,6 +988,9 @@ h1 {
     .author-meta span a {
       color: #9EABB3; }
 
+.cover-image {
+  display: none !important; }
+
 .comment-area {
   display: none;
   background: #fff;
