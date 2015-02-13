@@ -624,7 +624,7 @@ h1 {
   text-overflow: ellipsis; }
   .post-title a {
     font-family: "ff-tisa-web-pro-1", "ff-tisa-web-pro-2", "Lucida Grande", "Hiragino Sans GB", "Hiragino Sans GB W3" 'Open Sans', sans-serif;
-    text-shadow: 1px 1px 1px #000, 0 0 0 #000, 1px 1px 1px #fff; }
+    text-shadow: 1px 1px 1px #333, 0 0 0 #333, 1px 1px 1px #fff; }
 
 .post-meta span {
   display: inline-block;
@@ -1066,6 +1066,23 @@ h1 {
       font-size: 3.2rem; }
     .home-info-container h4 {
       font-size: 1.4rem;
-      letter-spacing: .5rem; } }
+      letter-spacing: .5rem; }
+  .pagination {
+    width: 90%; }
+    .pagination a {
+      font-size: 1rem; }
+  .archive-template #header {
+    height: 30%; }
+  .archive-template .home-info-container {
+    margin-top: 3rem; }
+    .archive-template .home-info-container h2 {
+      line-height: 2.2rem;
+      font-size: 1.6rem; }
+    .archive-template .home-info-container h4 {
+      font-size: 1.2rem; }
+  .post-meta span.post-tags {
+    display: none; }
+  .site-footer {
+    margin-top: 3rem; } }
 
 

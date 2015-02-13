@@ -28,7 +28,7 @@ var Duoshuo = {
     toggleBox: function() {
 
         $('.toggle-comment').on('click', function(container) {
-            console.log('开启评论');
+            // console.log('开启评论');
             if ($('.comment-area').has('div').length > 0) {
                 $('.comment-area').empty();
                 return;
@@ -90,17 +90,14 @@ var General = {
         $postContent.fitVids();
 
         function updateImageWidth() {
-            console.log(1);
             var $this = $(this),
                 contentWidth = $postContent.outerWidth(), // Width of the content
                 imageWidth = this.naturalWidth; // Original image resolution
 
             if (imageWidth >= contentWidth) {
                 $this.addClass('full-img');
-                console.log('大图');
             } else {
                 $this.removeClass('full-img');
-                console.log('小图');
             }
         }
 
@@ -226,10 +223,12 @@ $(document).ready(function() {
     })
 
 
+
+
+
     $('.post-in-list').each(function() {
         var _this = $(this);
         if (_this.isOnScreenVisible() == true) {
-            console.log('可见');
             _this.addClass('already-visible')
         }
     })
@@ -263,6 +262,19 @@ $(document).ready(function() {
         console.log('处理图标');
         General.addIcons();
     }
+
+        if ($('body').hasClass('archive-template') || $('body').hasClass('home-template')) {
+    $('.post-excerpt').each(function(){
+        var _this = $(this);
+        if(_this.has('img').length == 0){
+            console.log('没有图片');
+            _this.append('<img src="https://luoleiorg.b0.upaiyun.com/tmp/nev-set.jpg"></img>')
+        }else{
+            console.log('With');
+        }
+    })
+        }
+
 
 
 

@@ -49,3 +49,44 @@
         letter-spacing: .5rem;
     }
 }
+
+
+
+
+.pagination{
+	width:90%;
+	a{
+		font-size: 1rem;
+	}
+}
+
+.archive-template{
+	#header{
+		height: 30%;
+	}
+.home-info-container{
+    margin-top: 3rem;
+    h2,h4{
+        &:hover{
+        }
+    }
+    h2{
+    	line-height: 2.2rem;
+        font-size:1.6rem;
+
+    }
+    h4{
+        font-size: 1.2rem;
+    }
+}
+}
+
+.post-meta{
+	span.post-tags{
+		display: none;
+	}
+}
+
+.site-footer{
+	margin-top: 3rem;
+}
