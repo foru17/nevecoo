@@ -17,11 +17,55 @@ $.fn.extend({
 });
 
 
+var Duoshuo = {
+
+    dataThreadKey: location.protocol + '//' + location.host + location.pathname,
+
+    init: function() {
+        Duoshuo.toggleBox();
+    },
+
+    toggleBox: function() {
+
+        $('.toggle-comment').on('click', function(container) {
+            console.log('开启评论');
+            if ($('.comment-area').has('div').length > 0) {
+                $('.comment-area').empty();
+                return;
+            }
+            var el = document.createElement('div');
+            el.setAttribute('data-thread-key', Duoshuo.dataThreadKey);
+            el.setAttribute('data-url', location.href);
+            DUOSHUO.EmbedThread(el);
+            $('.comment-area').append(el);
+
+            setTimeout(function() {
+                $('.comment-area').addClass('toggle-up');
+            }, 500)
+
+
+            setTimeout(function() {
+                if ($('.comment-area').isOnScreenVisible() == true) {
+                    $('.toggle-comment').addClass('animated fadeOut').fadeOut(500)
+                }
+            }, 1000)
+
+
+
+        })
+
+    }
+}
+
+
+
+
 
 var General = {
     init: function() {
         General.scrollToPos();
         General.checkKey();
+        General.updateImageWidth();
     },
 
     //模拟鼠标上下滚动
@@ -41,6 +85,89 @@ var General = {
         }
     },
 
+    updateImageWidth: function() {
+        var $postContent = $(".post-content");
+        $postContent.fitVids();
+
+        function updateImageWidth() {
+            console.log(1);
+            var $this = $(this),
+                contentWidth = $postContent.outerWidth(), // Width of the content
+                imageWidth = this.naturalWidth; // Original image resolution
+
+            if (imageWidth >= contentWidth) {
+                $this.addClass('full-img');
+                console.log('大图');
+            } else {
+                $this.removeClass('full-img');
+                console.log('小图');
+            }
+        }
+
+        var $img = $(".single-post-inner img").on('load', updateImageWidth);
+
+        function casperFullImg() {
+            $img.each(updateImageWidth);
+        }
+
+        casperFullImg();
+    },
+
+    /*给文章中的url添加iconfont方便识别*/
+    urlIconlize: function(url) {
+        var domain,
+            _output;
+        var iconMap = { /*索引 可在这里添加匹配规则*/
+            'twitter': 'icon-twitter',
+            'qzone': 'icon-qzone',
+            'weibo': 'icon-weibo',
+            'facebook': 'icon-facebook',
+            'github': 'icon-github',
+            'douban': 'icon-douban',
+            'google': 'icon-google',
+            'luolei': 'icon-luolei',
+            'dribble': 'icon-dribble'
+
+        }
+
+        for (var name in iconMap) {
+            if (typeof iconMap[name] !== 'function') {
+                var MapKey = name;
+                if (url.indexOf(MapKey) >= 0) {
+                    domain = MapKey;
+                    _output = iconMap[MapKey];
+                }
+            }
+        }
+
+        return _output;
+    },
+
+    addIcons: function() {
+        /*给博客文章地址url添加ico识别*/
+        $('.single-post-inner p a:not(:has(img))').each(function(i) {
+            var _src = $(this).attr('href');
+            var tmp = document.createElement('a');
+            tmp.href = _src;
+            _selfDomain = tmp.hostname;
+            General.urlIconlize(_selfDomain);
+            console.log(_selfDomain);
+            //$(this).append(urlIconlize(_selfDomain));
+            $(this).prepend('<i class="iconfont ' + General.urlIconlize(_selfDomain) + '"></i>');
+            var _selfColor = $(this).find('i').css('color'),
+                _originalColor = $(this).css('color');
+
+            /*鼠标悬浮时*/
+            $(this).hover(function() {
+                $(this).css('color', _selfColor);
+                $(this).addClass('animated pulse');
+            }, function() {
+                $(this).css('color', _originalColor);
+                $(this).removeClass('animated pulse');
+            });
+
+        });
+    },
 
     //平滑滚动到顶部
     scrollToPos: function(position) {
@@ -81,21 +208,22 @@ var General = {
 
 
 $(document).ready(function() {
-    console.log('加载完毕');
     General.init();
+    General.updateImageWidth();
+    // 加载多说评论
+    Duoshuo.init();
+
 
 
     $('.single-post-inner p:has(img)').each(function() {
-
         var _this = $(this);
         _this.addClass('with-img');
+
         if (_this.isOnScreenVisible() == true) {
             _this.addClass('with-img').addClass('already-visible');
         }
 
     })
-
-
 
 
     $('.post-in-list').each(function() {
@@ -109,26 +237,16 @@ $(document).ready(function() {
         $('.share-icons').css('display', 'block').addClass('fadeInUpBig animated')
         $(this).fadeOut(500);
 
-        setTimeout(function() {
-            $('html,body').animate({
-                scrollTop: $('#share-icons').offset().top - $(window).height() / 2
-            }, 1000, function() {
-                // window.location.hash = '#';
-            });
-        }, 1000)
+        // setTimeout(function() {
+        //     $('html,body').animate({
+        //         scrollTop: $('#share-icons').offset().top - $(window).height() / 2
+        //     }, 1000, function() {
+        //         // window.location.hash = '#';
+        //     });
+        // }, 1000)
 
 
     })
-
-
-
-    // $('.share h4').hover(function() {
-    //     console.log('点击');
-    //     $('.share-icons').css('display','block').addClass('fadeInUpBig animated')
-    //     $(this).fadeOut(500);
-    // }, function() {
-    //     // $('.share-icons').fadeOut(500)
-    // })
 
     $('#header').click(function() {
         console.log('下滑');
@@ -139,6 +257,13 @@ $(document).ready(function() {
         });
         return false;
     })
+
+
+    if ($('body').hasClass('post-template')) {
+        console.log('处理图标');
+        General.addIcons();
+    }
+
 
 
     $(window).scroll(function() {
@@ -152,23 +277,24 @@ $(document).ready(function() {
             $('.share h4').css('display', 'block');
         }
 
+        if ($('body').hasClass('archive-template') || $('body').hasClass('home-template')) {
+            $('.post-in-list').each(function() {
+                var _this = $(this);
+                if (_this.isOnScreenVisible() == true && _this.hasClass('already-visible') != true) {
+                    _this.addClass('fadeInUpBig animated')
+                }
+            })
+        }
 
-        $('.post-in-list').each(function() {
-            var _this = $(this);
-            if (_this.isOnScreenVisible() == true && _this.hasClass('already-visible') != true) {
-                _this.addClass('fadeInUpBig animated')
-            }
-        })
+        // $('.single-post-inner p:has(img)').each(function() {
+        //     var _this = $(this);
+        //     if (_this.isOnScreenVisible() == true && _this.hasClass('already-visible') != true) {
+        //         setTimeout(function() {
+        //             _this.addClass('with-img');
+        //         }, 200)
 
-        $('.single-post-inner p:has(img)').each(function() {
-            var _this = $(this);
-            if (_this.isOnScreenVisible() == true && _this.hasClass('already-visible') != true) {
-                setTimeout(function() {
-                    _this.addClass('with-img');
-                }, 200)
-
-            }
-        })
+        //     }
+        // })
 
 
 

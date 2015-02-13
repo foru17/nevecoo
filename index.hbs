@@ -1,0 +1,45 @@
+{{!< default}}
+
+    <header id="header" class="home-header blog-background banner-mask {{#if @blog.cover}}" style="background-image: url({{@blog.cover}}){{else}}no-cover{{/if}}">
+        <div class="header-wrap">
+        <div class="home-info-container">
+            <h2>Stay before every beautiful thoughts</h2>
+            <h4>在每一个美好的思想前停留</h4>
+        </div>
+    </header>
+{{! The main content area on the homepage }}
+<main id="main" class="content homepage" role="main">
+{{! Each post will be output using this markup }}
+{{#foreach posts}}
+
+<article class="post-in-list {{post_class}}">
+<section class="post-excerpt">
+{{content words="0"}}
+<div class="info-mask">
+<div class="mask-wrapper">
+<h2 class="post-title"><a href="{{url}}">{{{title}}}</a></h2>
+<div class="post-meta">
+<span class="post-time"><time datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMM YYYY"}}</time></span>
+<span class="post-tags">
+{{tags prefix="" separator=" "}}
+</span>
+</div>
+</div>
+
+</div>
+
+{{!-- <div class="excerpt-word hidden">
+{{excerpt}}
+</div> --}}
+</section>
+
+        </article>
+
+{{/foreach}}
+
+{{!! After all the posts, we have the previous/next pagination links }}
+
+{{pagination}}
+</main>
+
+
