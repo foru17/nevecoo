@@ -1190,6 +1190,10 @@ Copyright (c) 2014 Daniel Eden
 @media only screen and (max-width: 768px) {
   #main {
     width: 100%;
-    margin: 2rem auto; } }
+    margin: 2rem auto; }
+  .post-template .site-footer {
+    margin-top: 3rem; }
+  .home-template .site-footer {
+    margin-top: 3rem; } }
 
 
