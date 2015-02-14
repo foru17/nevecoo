@@ -1,3 +1,18 @@
+
+@font-face {
+  font-family: 'Exo';
+  font-style: normal;
+  font-weight: 100;
+  src: local('Exo Thin'), local('Exo-Thin'), url(http://cdn.is26.com/fonts/exo/ek6B72kladJz_Z6o5PEplKCWcynf_cDxXwCLxiixG1c.woff) format('woff');
+}
+@font-face {
+  font-family: 'Exo';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Exo Regular'), local('Exo-Regular'), url(http://cdn.is26.com/fonts/exo/ZcGd2dvMSgl3mHN3lKAjNw.woff) format('woff');
+}
+
+
 html, body {
     width: 100%;
     min-height: 100%;
@@ -11,6 +26,7 @@ html {
     -webkit-font-smoothing: antialiased;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     background-image:url(#{$imgPath}/p5.png);
+    font-family:  $googleFontExo $fontOSX sans-serif;
 }
 a {
     text-decoration: none;
@@ -83,14 +99,14 @@ h1 {
     height: 10rem;
     padding: .5rem 15px;
     border-top: #EBF2F6 1px solid;
-    font-family: "Open Sans", sans-serif;
+    font-family: $googleFontExo, sans-serif;
     font-weight: lighter;
     font-size: 1.4rem;
     line-height: 1.75em;
     color: #666665;
     text-align: center;
     a {
-        font-family: "Open Sans", sans-serif;
+        font-family: $googleFontExo, sans-serif;
         color: #666665;
         &:hover {
             color: #50585D;
@@ -181,16 +197,13 @@ h1 {
 .post-title {
     color: #fff;
     font-size: 3.2rem;
-    /*line-height: 4.6rem;*/
-    /*margin-top: 1.2rem;*/
-
-    font-family: 'Open Sans', sans-serif;
+    font-family: $googleFontExo, sans-serif;
     margin: 1.2rem 0;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     a {
-        font-family: $fontOSX 'Open Sans', sans-serif;
+        font-family: $googleFontExo $fontOSX , sans-serif;
         text-shadow: 1px 1px 1px #333, 0 0 0 #333, 1px 1px 1px #fff;
     }
 }
@@ -238,7 +251,7 @@ h1 {
     a {
         font-size: 1.4rem;
         // text-transform: uppercase;
-        font-family: $fontOSX "Open Sans";
+        font-family: $googleFontExo $fontOSX;
         border-radius: .3rem;
         display: inline-block;
         text-align: center;
@@ -268,7 +281,7 @@ h1 {
     padding: 0rem 2.8% 1.6rem;
     overflow: hidden;
     border-bottom: 1px dashed #e5e5e5;
-    font-family: $fontOSX;
+    font-family: $googleFontExo, $fontOSX;
     img {
         display: block;
         margin: 0 auto;
@@ -285,7 +298,7 @@ h1 {
     a {
         color: #54B5DB;
         padding: 0 .5rem;
-        font-family: 'Open Sans', sans-serif;
+        font-family: $googleFontExo, sans-serif;
     }
     p {
         color: #333;
@@ -293,7 +306,7 @@ h1 {
         font-size: 1.6rem;
         line-height: 2.8rem;
         margin-top: 2.2rem;
-        font-family: $fontOSX;
+        font-family: $googleFontExo $fontOSX;
     }
     p.with-img {
         margin: 0;
@@ -302,8 +315,12 @@ h1 {
         transition: padding 0.15s linear;
     }
     h1, h2, h3, h4, h5, h6, pre, code {
+
         color: #595959;
         // padding: 0 1.5rem;
+    }
+    h2,h4,h6{
+        margin-top: .5rem;
     }
     li {
         font-size: 1.6rem;
@@ -315,6 +332,19 @@ h1 {
         line-height: 2.2rem;
         color: #333;
     }
+
+    iframe,frame,video{
+        max-width: 100%;
+        height: auto;
+    }
+
+code{
+  padding: .1em .4em;
+  background: #e8f2fb;
+  border: 1px solid #c9e1f6;
+  border-radius: 3px;
+}
+
     // code {
     //     padding: 1px 3px;
     //     font-family: 'Open Sans', sans-serif;
@@ -325,9 +355,14 @@ h1 {
     //     border-radius: 2px;
     // }
     //
-    // pre {
-    //     white-space: pre-wrap;
-    // }
+    pre {
+        white-space: pre-wrap;
+        code{
+            background:none;
+            border:0 none;
+            line-height: 2rem;
+        }
+    }
     // code {
     //     font-family: monospace, serif;
     //     padding: .3rem .6rem;
@@ -358,7 +393,7 @@ h1 {
     margin-top: 18rem;
     h2,h4{
         color: #fff;
-        font-family: 'Open Sans' $fontOSX;
+        font-family: $googleFontExo $fontOSX;
         font-weight: lighter;
          text-shadow:0 1px 1px #595959;
         &:hover{
@@ -406,6 +441,7 @@ h1 {
 .post-page-time {
     display: inline-block;
     float: left;
+    font-family: $googleFontExo;
     padding-bottom: 1rem;
     text-align: left;
     margin-top: 1rem;
@@ -431,7 +467,7 @@ h1 {
     text-align: left;
     font-weight: lighter;
     // font-family: $fontOSX;
-    font-family: 'Open Sans', sans-serif;
+    font-family: $googleFontExo $fontOSX, sans-serif;
     @include word-wrap-multi;
 }
 // .share-fixed{
@@ -691,4 +727,82 @@ display:none !important;
         -webkit-transform: none;
         transform: none;
     }
+}
+
+
+@charset "UTF-8";
+/*!
+Animate.css - http://daneden.me/animate
+Licensed under the MIT license - http://opensource.org/licenses/MIT
+
+Copyright (c) 2014 Daniel Eden
+*/
+
+.animated {
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
+
+.animated.infinite {
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+.animated.hinge {
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+}
+
+
+@-webkit-keyframes fadeInUpBig {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 2000px, 0);
+            transform: translate3d(0, 2000px, 0);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+            transform: none;
+  }
+}
+
+@keyframes fadeInUpBig {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 2000px, 0);
+            transform: translate3d(0, 2000px, 0);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+            transform: none;
+  }
+}
+
+.fadeInUpBig {
+  -webkit-animation-name: fadeInUpBig;
+          animation-name: fadeInUpBig;
+}
+
+
+
+
+@-webkit-keyframes fadeOut {
+  0% {opacity: 1;}
+  100% {opacity: 0;}
+}
+
+@keyframes fadeOut {
+  0% {opacity: 1;}
+  100% {opacity: 0;}
+}
+
+.fadeOut {
+  -webkit-animation-name: fadeOut;
+          animation-name: fadeOut;
 }

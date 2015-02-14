@@ -446,6 +446,18 @@ The `sprites` mixin generates identical output to the CSS template
 .single-post-inner .icon-luolei:before {
   content: "\00e60e"; }
 
+@font-face {
+  font-family: 'Exo';
+  font-style: normal;
+  font-weight: 100;
+  src: local('Exo Thin'), local('Exo-Thin'), url(http://cdn.is26.com/fonts/exo/ek6B72kladJz_Z6o5PEplKCWcynf_cDxXwCLxiixG1c.woff) format('woff'); }
+
+@font-face {
+  font-family: 'Exo';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Exo Regular'), local('Exo-Regular'), url(http://cdn.is26.com/fonts/exo/ZcGd2dvMSgl3mHN3lKAjNw.woff) format('woff'); }
+
 html, body {
   width: 100%;
   min-height: 100%;
@@ -458,7 +470,8 @@ html {
   font-size: 62.5%;
   -webkit-font-smoothing: antialiased;
   -webkit-tap-highlight-color: transparent;
-  background-image: url(../../assets/images/p5.png); }
+  background-image: url(../../assets/images/p5.png);
+  font-family: "Exo" "ff-tisa-web-pro-1", "ff-tisa-web-pro-2", "Lucida Grande", "Hiragino Sans GB", "Hiragino Sans GB W3" sans-serif; }
 
 a {
   text-decoration: none; }
@@ -527,14 +540,14 @@ h1 {
   height: 10rem;
   padding: .5rem 15px;
   border-top: #EBF2F6 1px solid;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Exo", sans-serif;
   font-weight: lighter;
   font-size: 1.4rem;
   line-height: 1.75em;
   color: #666665;
   text-align: center; }
   .site-footer a {
-    font-family: "Open Sans", sans-serif;
+    font-family: "Exo", sans-serif;
     color: #666665; }
     .site-footer a:hover {
       color: #50585D; }
@@ -615,15 +628,13 @@ h1 {
 .post-title {
   color: #fff;
   font-size: 3.2rem;
-  /*line-height: 4.6rem;*/
-  /*margin-top: 1.2rem;*/
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Exo", sans-serif;
   margin: 1.2rem 0;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis; }
   .post-title a {
-    font-family: "ff-tisa-web-pro-1", "ff-tisa-web-pro-2", "Lucida Grande", "Hiragino Sans GB", "Hiragino Sans GB W3" 'Open Sans', sans-serif;
+    font-family: "Exo" "ff-tisa-web-pro-1", "ff-tisa-web-pro-2", "Lucida Grande", "Hiragino Sans GB", "Hiragino Sans GB W3", sans-serif;
     text-shadow: 1px 1px 1px #333, 0 0 0 #333, 1px 1px 1px #fff; }
 
 .post-meta span {
@@ -669,7 +680,7 @@ h1 {
   width: 70%; }
   .pagination a {
     font-size: 1.4rem;
-    font-family: "ff-tisa-web-pro-1", "ff-tisa-web-pro-2", "Lucida Grande", "Hiragino Sans GB", "Hiragino Sans GB W3" "Open Sans";
+    font-family: "Exo" "ff-tisa-web-pro-1", "ff-tisa-web-pro-2", "Lucida Grande", "Hiragino Sans GB", "Hiragino Sans GB W3";
     border-radius: .3rem;
     display: inline-block;
     text-align: center;
@@ -694,7 +705,7 @@ h1 {
   padding: 0rem 2.8% 1.6rem;
   overflow: hidden;
   border-bottom: 1px dashed #e5e5e5;
-  font-family: "ff-tisa-web-pro-1", "ff-tisa-web-pro-2", "Lucida Grande", "Hiragino Sans GB", "Hiragino Sans GB W3"; }
+  font-family: "Exo", "ff-tisa-web-pro-1", "ff-tisa-web-pro-2", "Lucida Grande", "Hiragino Sans GB", "Hiragino Sans GB W3"; }
   .single-post-inner img {
     display: block;
     margin: 0 auto;
@@ -709,13 +720,13 @@ h1 {
   .single-post-inner a {
     color: #54B5DB;
     padding: 0 .5rem;
-    font-family: 'Open Sans', sans-serif; }
+    font-family: "Exo", sans-serif; }
   .single-post-inner p {
     color: #333;
     font-size: 1.6rem;
     line-height: 2.8rem;
     margin-top: 2.2rem;
-    font-family: "ff-tisa-web-pro-1", "ff-tisa-web-pro-2", "Lucida Grande", "Hiragino Sans GB", "Hiragino Sans GB W3"; }
+    font-family: "Exo" "ff-tisa-web-pro-1", "ff-tisa-web-pro-2", "Lucida Grande", "Hiragino Sans GB", "Hiragino Sans GB W3"; }
   .single-post-inner p.with-img {
     margin: 0;
     padding: 0;
@@ -723,6 +734,8 @@ h1 {
     transition: padding 0.15s linear; }
   .single-post-inner h1, .single-post-inner h2, .single-post-inner h3, .single-post-inner h4, .single-post-inner h5, .single-post-inner h6, .single-post-inner pre, .single-post-inner code {
     color: #595959; }
+  .single-post-inner h2, .single-post-inner h4, .single-post-inner h6 {
+    margin-top: .5rem; }
   .single-post-inner li {
     font-size: 1.6rem;
     line-height: 2.4rem; }
@@ -731,6 +744,20 @@ h1 {
     font-size: 1.6rem;
     line-height: 2.2rem;
     color: #333; }
+  .single-post-inner iframe, .single-post-inner frame, .single-post-inner video {
+    max-width: 100%;
+    height: auto; }
+  .single-post-inner code {
+    padding: .1em .4em;
+    background: #e8f2fb;
+    border: 1px solid #c9e1f6;
+    border-radius: 3px; }
+  .single-post-inner pre {
+    white-space: pre-wrap; }
+    .single-post-inner pre code {
+      background: none;
+      border: 0 none;
+      line-height: 2rem; }
 
 .nav-header {
   width: 100%;
@@ -747,7 +774,7 @@ h1 {
   margin-top: 18rem; }
   .home-info-container h2, .home-info-container h4 {
     color: #fff;
-    font-family: 'Open Sans' "ff-tisa-web-pro-1", "ff-tisa-web-pro-2", "Lucida Grande", "Hiragino Sans GB", "Hiragino Sans GB W3";
+    font-family: "Exo" "ff-tisa-web-pro-1", "ff-tisa-web-pro-2", "Lucida Grande", "Hiragino Sans GB", "Hiragino Sans GB W3";
     font-weight: lighter;
     text-shadow: 0 1px 1px #595959; }
     .home-info-container h2:hover, .home-info-container h4:hover {
@@ -786,6 +813,7 @@ h1 {
 .post-page-time {
   display: inline-block;
   float: left;
+  font-family: "Exo";
   padding-bottom: 1rem;
   text-align: left;
   margin-top: 1rem;
@@ -810,7 +838,7 @@ h1 {
   margin: 0 auto;
   text-align: left;
   font-weight: lighter;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Exo" "ff-tisa-web-pro-1", "ff-tisa-web-pro-2", "Lucida Grande", "Hiragino Sans GB", "Hiragino Sans GB W3", sans-serif;
   white-space: normal;
   overflow: hidden;
   text-overflow: ellipsis; }
@@ -1036,9 +1064,77 @@ h1 {
     -webkit-transform: none;
     transform: none; } }
 
+/*!
+Animate.css - http://daneden.me/animate
+Licensed under the MIT license - http://opensource.org/licenses/MIT
+
+Copyright (c) 2014 Daniel Eden
+*/
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both; }
+
+.animated.infinite {
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite; }
+
+.animated.hinge {
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s; }
+
+@-webkit-keyframes fadeInUpBig {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 2000px, 0);
+    transform: translate3d(0, 2000px, 0); }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none; } }
+
+@keyframes fadeInUpBig {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 2000px, 0);
+    transform: translate3d(0, 2000px, 0); }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none; } }
+
+.fadeInUpBig {
+  -webkit-animation-name: fadeInUpBig;
+  animation-name: fadeInUpBig; }
+
+@-webkit-keyframes fadeOut {
+  0% {
+    opacity: 1; }
+
+  100% {
+    opacity: 0; } }
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1; }
+
+  100% {
+    opacity: 0; } }
+
+.fadeOut {
+  -webkit-animation-name: fadeOut;
+  animation-name: fadeOut; }
+
 @media only screen and (max-width: 361px) {
   .site-footer {
-    font-size: 1.2rem; } }
+    margin-top: 3rem;
+    font-size: 1.2rem; }
+  #main {
+    width: 100%;
+    margin: 2rem auto; } }
 
 @media only screen and (max-width: 481px) {
   #header {
@@ -1046,10 +1142,13 @@ h1 {
   .post-info-container {
     width: 84%; }
   .info-mask {
-    height: 8rem; }
+    height: 6rem; }
   .post-title {
-    font-size: 2.4rem;
-    margin: 0.4rem 0; }
+    font-size: 1.6rem;
+    margin: 0.2rem 0;
+    line-height: 1.8rem; }
+  .mask-wrapper {
+    margin-top: .5rem; }
   #main {
     width: 100%;
     margin: 2rem auto; }
@@ -1090,6 +1189,7 @@ h1 {
 
 @media only screen and (max-width: 768px) {
   #main {
-    width: 94%; } }
+    width: 100%;
+    margin: 2rem auto; } }
 
 

@@ -60,7 +60,6 @@ var Duoshuo = {
 
 
 
-
 var General = {
     init: function() {
         General.scrollToPos();
