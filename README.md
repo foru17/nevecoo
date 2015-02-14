@@ -14,4 +14,4 @@ Nevecoo 是一款Ghost主题
 - [ ] 代码结构重新组织
 - [ ] 顶部Nav
 - [ ] gulpfile重新配置
-
+- [ ] 视频的适配
