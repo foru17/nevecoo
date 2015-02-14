@@ -15,3 +15,4 @@ Nevecoo 是一款Ghost主题
 - [ ] 顶部Nav
 - [ ] gulpfile重新配置
 - [ ] 视频的适配
+- [ ] ReactJS清凉版
