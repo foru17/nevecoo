@@ -5,6 +5,19 @@
 Nevecoo 是一款Ghost主题
 
 
+##注意
+
+**使用这个主题的朋友，请务必修改自定义配置**
+
+
+####需自定义的配置
+
+1. `post.hbs`中的多说配置
+2. `default.hbs`顶部百度统计代码
+3. `default.hbs`底部GA统计代码
+4. `default.hbs` 顶部 谷歌Plus ` <link rel="author" href="https://plus.google.com/105790146178074084423/">`请修改成自己的GP地址（谷歌搜索的时候会显示作者信息）
+
+
 ####新主题
 
 [《「辞旧迎新」新主题,更安全的罗磊独立博客》](https://luolei.org/theme-nevecoo/)
@@ -40,12 +53,7 @@ Github地址:[Nevecoo](https://github.com/foru17/nevecoo).
 
 
 
-####需自定义的配置
 
-1. `post.hbs`中的多说配置
-2. `default.hbs`顶部百度统计代码
-3. `default.hbs`底部GA统计代码
-4. `default.hbs` 顶部 谷歌Plus ` <link rel="author" href="https://plus.google.com/105790146178074084423/">`请修改成自己的GP地址（谷歌搜索的时候会显示作者信息）
 
 ####TO-DO
 
