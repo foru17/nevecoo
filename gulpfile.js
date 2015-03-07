@@ -27,6 +27,10 @@ var imagemin = require('gulp-imagemin');
 var spritesmith = require('gulp.spritesmith');
 var imageResize = require('gulp-image-resize');
 
+
+// 错误处理
+var plumber = require("gulp-plumber");
+
 // 设置相关路径
 var paths = {
     assets: './assets',
@@ -43,6 +47,7 @@ gulp.task('clean', function(cb) {
 // Sass 处理
 gulp.task('sass', function() {
     gulp.src(paths.sass)
+        .pipe(plumber())
         .pipe(sourcemaps.init())
         .pipe(sass())
         .pipe(gulp.dest('css'))
@@ -80,6 +85,7 @@ gulp.task('half', function () {
 // JS检查
 gulp.task('lint', function() {
     return gulp.src(paths.js)
+        .pipe(plumber())
         .pipe(jshint())
         .pipe(jshint.reporter('default'));
 });
@@ -89,6 +95,7 @@ gulp.task('scripts', ['clean'], function() {
     // Minify and copy all JavaScript (except vendor scripts)
     // with sourcemaps all the way down
     return gulp.src(paths.js)
+        .pipe(plumber())
         .pipe(sourcemaps.init()).pipe(uglify())
         .pipe(concat('all.min.js'))
         .pipe(sourcemaps.write())
