@@ -585,7 +585,7 @@ h1 {
   display: none;
   position: absolute;
   left: 50%;
-  bottom: 4rem;
+  bottom: 5rem;
   height: 2rem; }
   .arrow_down a {
     z-index: 4;
@@ -597,10 +597,10 @@ h1 {
     margin-left: -1.3rem;
     width: 2.8rem;
     height: 2.8rem;
-    border-left: .2rem solid #fff;
-    border-bottom: .2rem solid #fff;
+    border-left: .1rem solid #fff;
+    border-bottom: .1rem solid #fff;
     -webkit-animation-name: shine;
-    -webkit-animation-duration: 1s;
+    -webkit-animation-duration: 1.5s;
     -webkit-animation-timing-function: linear;
     -webkit-animation-iteration-count: infinite;
     animation-iteration-count: infinite; }
@@ -1236,7 +1236,12 @@ Copyright (c) 2014 Daniel Eden
     margin-top: 3rem; }
   .home-template .site-footer {
     margin-top: 3rem; }
+  .nav-header-container {
+    width: 80%; }
   .arrow_down {
-    display: block; } }
+    display: block; }
+  .back-home {
+    top: .5rem;
+    left: 0; } }
 
 

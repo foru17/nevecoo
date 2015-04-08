@@ -177,7 +177,7 @@ h1 {
     position:absolute;
     left: 50%;
     // margin-left: -2rem;
-    bottom:4rem;
+    bottom:5rem;
     height: 2rem;
     a {
         z-index: 4;
@@ -190,10 +190,10 @@ h1 {
         margin-left: -1.3rem;
         width: 2.8rem;
         height: 2.8rem;
-        border-left: .2rem solid #fff;
-        border-bottom: .2rem solid #fff;
+        border-left: .1rem solid #fff;
+        border-bottom: .1rem solid #fff;
         -webkit-animation-name: shine;
-        -webkit-animation-duration: 1s;
+        -webkit-animation-duration: 1.5s;
         -webkit-animation-timing-function: linear;
         -webkit-animation-iteration-count: infinite;
         animation-iteration-count: infinite;
