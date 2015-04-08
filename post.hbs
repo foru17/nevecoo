@@ -8,7 +8,11 @@
 
 
     <header id="header" class="home-header blog-background banner-mask {{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}}">
-        <div class="nav-header hide">
+        <div class="nav-header">
+        <div class="nav-header-container">
+             <a href="{{@blog.url}}" class="back-home">Home</a>
+        </div>
+
         </div>
         <div class="header-wrap">
             <div class="post-info-container">
@@ -23,6 +27,9 @@
 
             </div>
 
+        </div>
+        <div class="arrow_down">
+               <a href="javascript:;"></a>
         </div>
     </header>
 

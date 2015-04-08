@@ -73,14 +73,14 @@ gulp.task('sprite', function () {
 });
 
 
-gulp.task('half', function () {
-  gulp.src('./img/*.png')
-    .pipe(imageResize({
-      width : 100,
-      height : 100
-    }))
-    .pipe(gulp.dest('./img/1x/'));
-});
+// gulp.task('half', function () {
+//   gulp.src('./img/*.png')
+//     .pipe(imageResize({
+//       width : 100,
+//       height : 100
+//     }))
+//     .pipe(gulp.dest('./img/1x/'));
+// });
 
 // JS检查
 gulp.task('lint', function() {

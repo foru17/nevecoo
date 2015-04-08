@@ -246,34 +246,36 @@ $(document).ready(function() {
 
     })
 
-    $('#header').click(function() {
-        console.log('下滑');
-        $('html,body').animate({
-            scrollTop: $(window).height() - 20
-        }, 1000, function() {
-            // window.location.hash = '#';
-        });
-        return false;
-    })
+
 
 
     if ($('body').hasClass('post-template')) {
         // console.log('处理图标');
         $('img[alt="cover"]').addClass('cover-image');
         General.addIcons();
+
+        $('.arrow_down').click(function() {
+            console.log('下滑');
+            $('html,body').animate({
+                scrollTop: $(window).height() - 20
+            }, 1000, function() {
+                // window.location.hash = '#';
+            });
+            return false;
+        })
     }
 
-        if ($('body').hasClass('archive-template') || $('body').hasClass('home-template')) {
-    $('.post-excerpt').each(function(){
-        var _this = $(this);
-        if(_this.has('img').length == 0){
-            console.log('没有图片');
-            _this.append('<img src="https://luoleiorg.b0.upaiyun.com/tmp/nev-set.jpg"></img>')
-        }else{
-            console.log('With');
-        }
-    })
-        }
+    if ($('body').hasClass('archive-template') || $('body').hasClass('home-template')) {
+        $('.post-excerpt').each(function() {
+            var _this = $(this);
+            if (_this.has('img').length == 0) {
+                console.log('没有图片');
+                _this.append('<img src="https://luoleiorg.b0.upaiyun.com/tmp/nev-set.jpg"></img>')
+            } else {
+                console.log('With');
+            }
+        })
+    }
 
 
 
