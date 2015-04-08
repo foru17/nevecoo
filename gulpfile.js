@@ -44,6 +44,8 @@ gulp.task('clean', function(cb) {
     del(['build'], cb);
 });
 
+
+
 // Sass 处理
 gulp.task('sass', function() {
     gulp.src(paths.sass)
@@ -55,9 +57,21 @@ gulp.task('sass', function() {
         .pipe(gulp.dest(paths.css))
         .pipe(minifycss())
         .pipe(sourcemaps.write({sourceRoot: '/css/sass'}))
+        .pipe(rename('dev.min.css'))
+        .pipe(gulp.dest('assets/css'));
+
+    gulp.src(paths.sass)
+        .pipe(plumber())
+        .pipe(sass())
+        .pipe(gulp.dest('css'))
+        .pipe(concat('style.css'))
+        .pipe(gulp.dest(paths.css))
+        .pipe(minifycss())
         .pipe(rename('style.min.css'))
         .pipe(gulp.dest('assets/css'));
+
 });
+
 
 // 图片精灵处理
 gulp.task('sprite', function () {
@@ -101,6 +115,33 @@ gulp.task('scripts', ['clean'], function() {
         .pipe(sourcemaps.write())
         .pipe(gulp.dest('assets/js'));
 });
+
+
+// gulp.task('scripts', ['clean'], function() {
+//     // Minify and copy all JavaScript (except vendor scripts)
+//     // with sourcemaps all the way down
+//         gulp.src(paths.js)
+//         .pipe(plumber())
+//         .pipe(sourcemaps.init())
+//         .pipe(jshint())
+//         .pipe(jshint.reporter(stylish))
+//         .pipe(uglify())
+//         .pipe(concat('all.min.js'))
+//         .pipe(gulp.dest('assets/js'))
+//         .pipe(rename('dev.min.js'))
+//         .pipe(sourcemaps.write())
+//         .pipe(gulp.dest('assets/js'));
+
+
+//         gulp.src(paths.js)
+//         .pipe(plumber())
+//         .pipe(jshint())
+//         .pipe(uglify())
+//         .pipe(concat('all.min.js'))
+//         .pipe(gulp.dest('assets/js'))
+
+// });
+
 
 
 

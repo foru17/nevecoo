@@ -6,13 +6,23 @@
             <h2>Stay before every beautiful thoughts</h2>
             <h4>在每一个美好的思想前停留</h4>
         </div>
+        <div class="arrow_down">
+               <a href="javascript:;"></a>
+        </div>
     </header>
 {{! The main content area on the homepage }}
 <main id="main" class="content homepage" role="main">
 {{! Each post will be output using this markup }}
 {{#foreach posts}}
 
-<article class="post-in-list {{post_class}}">
+<article class="post-in-list {{post_class}} scrollme animateme"
+                data-when="enter"
+                data-from="0.5"
+                data-to="0"
+                data-crop="false"
+                data-opacity="0.5"
+                data-scale="0.8"
+>
 <section class="post-excerpt">
 <a href="{{url}}">
 {{content words="0"}}

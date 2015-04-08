@@ -205,6 +205,12 @@ h1 {
     margin: 2rem auto;
 }
 
+.archive-template{
+    .arrow_down{
+        display: none;
+    }
+}
+
 .content {}
 
 #main {
@@ -223,10 +229,12 @@ h1 {
 }
 
 .post-in-list {
+    // visibility: hidden;
     position: relative;
     margin-bottom: 2rem;
     overflow: hidden;
     min-height: 10rem;
+    -webkit-transform: translate3d(0,0,0);
 }
 
 .post-in-list a {
@@ -784,6 +792,28 @@ h1 {
         }
     }
 }
+
+
+.wechat-notice{
+    margin:1rem 0;
+    display: none;
+    a{
+        img{
+            display: block;
+            width: 100%;
+            max-width: 100%;
+        }
+    }
+    h6{
+        margin-top:.5rem;
+        font-size: 1.2rem;
+        font-weight: lighter;
+        line-height: 1.8rem;
+        color:#333;
+    }
+}
+
+
 
 .cover-image {
     display: none !important;

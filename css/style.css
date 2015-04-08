@@ -608,6 +608,9 @@ h1 {
 .home-template #main, .archive-template #main {
   margin: 2rem auto; }
 
+.archive-template .arrow_down {
+  display: none; }
+
 #main {
   position: relative;
   z-index: 1;
@@ -619,7 +622,8 @@ h1 {
   position: relative;
   margin-bottom: 2rem;
   overflow: hidden;
-  min-height: 10rem; }
+  min-height: 10rem;
+  -webkit-transform: translate3d(0, 0, 0); }
 
 .post-in-list a {
   color: #fff; }
@@ -1052,6 +1056,20 @@ h1 {
     .author-meta span a {
       color: #9EABB3; }
 
+.wechat-notice {
+  margin: 1rem 0;
+  display: none; }
+  .wechat-notice a img {
+    display: block;
+    width: 100%;
+    max-width: 100%; }
+  .wechat-notice h6 {
+    margin-top: .5rem;
+    font-size: 1.2rem;
+    font-weight: lighter;
+    line-height: 1.8rem;
+    color: #333; }
+
 .cover-image {
   display: none !important; }
 
@@ -1243,5 +1261,4 @@ Copyright (c) 2014 Daniel Eden
   .back-home {
     top: .5rem;
     left: 0; } }
-
 
