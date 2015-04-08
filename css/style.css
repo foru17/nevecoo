@@ -471,7 +471,7 @@ html {
   -webkit-font-smoothing: antialiased;
   -webkit-tap-highlight-color: transparent;
   background-image: url(../../assets/images/p5.png);
-  font-family: "Exo" "ff-tisa-web-pro-1", "ff-tisa-web-pro-2", "Lucida Grande", "Hiragino Sans GB", "Hiragino Sans GB W3" sans-serif; }
+  font-family: "Exo" 'Hiragino Sans GB', 'Microsoft YaHei', 微软雅黑, STHeiti, 'WenQuanYi Micro Hei', Helvetica, Arial, sans-serif sans-serif; }
 
 a {
   text-decoration: none; }
@@ -655,7 +655,7 @@ h1 {
   overflow: hidden;
   text-overflow: ellipsis; }
   .post-title a {
-    font-family: "Exo" "ff-tisa-web-pro-1", "ff-tisa-web-pro-2", "Lucida Grande", "Hiragino Sans GB", "Hiragino Sans GB W3", sans-serif;
+    font-family: "Exo" 'Hiragino Sans GB', 'Microsoft YaHei', 微软雅黑, STHeiti, 'WenQuanYi Micro Hei', Helvetica, Arial, sans-serif, sans-serif;
     text-shadow: 1px 1px 1px #333, 0 0 0 #333, 1px 1px 1px #fff; }
 
 .post-meta span {
@@ -701,7 +701,7 @@ h1 {
   width: 70%; }
   .pagination a {
     font-size: 1.4rem;
-    font-family: "Exo" "ff-tisa-web-pro-1", "ff-tisa-web-pro-2", "Lucida Grande", "Hiragino Sans GB", "Hiragino Sans GB W3";
+    font-family: "Exo" 'Hiragino Sans GB', 'Microsoft YaHei', 微软雅黑, STHeiti, 'WenQuanYi Micro Hei', Helvetica, Arial, sans-serif;
     border-radius: .3rem;
     display: inline-block;
     text-align: center;
@@ -726,7 +726,7 @@ h1 {
   padding: 0rem 2.8% 1.6rem;
   overflow: hidden;
   border-bottom: 1px dashed #e5e5e5;
-  font-family: "Exo", "ff-tisa-web-pro-1", "ff-tisa-web-pro-2", "Lucida Grande", "Hiragino Sans GB", "Hiragino Sans GB W3"; }
+  font-family: "Exo", 'Hiragino Sans GB', 'Microsoft YaHei', 微软雅黑, STHeiti, 'WenQuanYi Micro Hei', Helvetica, Arial, sans-serif; }
   .single-post-inner img {
     display: block;
     margin: 0 auto;
@@ -747,7 +747,7 @@ h1 {
     font-size: 1.6rem;
     line-height: 2.8rem;
     margin-top: 2.2rem;
-    font-family: "Exo" "ff-tisa-web-pro-1", "ff-tisa-web-pro-2", "Lucida Grande", "Hiragino Sans GB", "Hiragino Sans GB W3"; }
+    font-family: "Exo" 'Hiragino Sans GB', 'Microsoft YaHei', 微软雅黑, STHeiti, 'WenQuanYi Micro Hei', Helvetica, Arial, sans-serif; }
   .single-post-inner p.with-img {
     margin: 0;
     padding: 0;
@@ -814,7 +814,7 @@ h1 {
   margin-top: 18rem; }
   .home-info-container h2, .home-info-container h4 {
     color: #fff;
-    font-family: "Exo" "ff-tisa-web-pro-1", "ff-tisa-web-pro-2", "Lucida Grande", "Hiragino Sans GB", "Hiragino Sans GB W3";
+    font-family: "Exo" 'Hiragino Sans GB', 'Microsoft YaHei', 微软雅黑, STHeiti, 'WenQuanYi Micro Hei', Helvetica, Arial, sans-serif;
     font-weight: lighter;
     text-shadow: 0 1px 1px #595959; }
     .home-info-container h2:hover, .home-info-container h4:hover {
@@ -878,7 +878,7 @@ h1 {
   margin: 0 auto;
   text-align: left;
   font-weight: lighter;
-  font-family: "Exo" "ff-tisa-web-pro-1", "ff-tisa-web-pro-2", "Lucida Grande", "Hiragino Sans GB", "Hiragino Sans GB W3", sans-serif;
+  font-family: "Exo" 'Hiragino Sans GB', 'Microsoft YaHei', 微软雅黑, STHeiti, 'WenQuanYi Micro Hei', Helvetica, Arial, sans-serif;
   white-space: normal;
   overflow: hidden;
   text-overflow: ellipsis; }
@@ -1261,5 +1261,4 @@ Copyright (c) 2014 Daniel Eden
   .back-home {
     top: .5rem;
     left: 0; } }
-
 

@@ -5,9 +5,12 @@
 Nevecoo 是一款Ghost主题
 
 
-##注意
+#使用前必读！！！！！
 
 **使用这个主题的朋友，请务必修改自定义配置**
+
+相信用Ghost的朋友都有一定的基础，请务必注意相关配置。
+
 
 
 ####需自定义的配置
@@ -16,6 +19,7 @@ Nevecoo 是一款Ghost主题
 2. `default.hbs`顶部百度统计代码
 3. `default.hbs`底部GA统计代码
 4. `default.hbs` 顶部 谷歌Plus ` <link rel="author" href="https://plus.google.com/105790146178074084423/">`请修改成自己的GP地址（谷歌搜索的时候会显示作者信息）
+5. 微信浏览器中增加适配，滑动到底部的时候，自动弹出公众号图片，若不需要，请删除`js/base.js`中相关代码。例`General.isweixin == true `。
 
 
 ####新主题
@@ -49,8 +53,7 @@ Github地址:[Nevecoo](https://github.com/foru17/nevecoo).
 
 支持primejs，方便在文章中高亮不同的代码。
 
-现在Nevecoo 版本号还是0.0.1，在Github上开源，年后将继续优化交互细节，优化前端性能。
-
+现在Nevecoo 版本号还是0.0.2，在Github上开源，年后将继续优化交互细节，优化前端性能。
 
 
 
@@ -62,3 +65,7 @@ Github地址:[Nevecoo](https://github.com/foru17/nevecoo).
 - [ ] gulpfile重新配置
 - [ ] 视频的适配
 - [ ] ReactJS清凉版
+
+####更新
+
+* 2015.4.6 : 增加返回首页按钮,重新组织JS代码，jquery.s使用CDN，增加微信浏览器中的提示。

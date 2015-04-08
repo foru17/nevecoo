@@ -585,7 +585,7 @@ h1 {
     text-align: left;
     font-weight: lighter;
     // font-family: $fontOSX;
-    font-family: $googleFontExo $fontOSX, sans-serif;
+    font-family: $googleFontExo $fontOSX;
     @include word-wrap-multi;
 }
 

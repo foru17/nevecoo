@@ -676,13 +676,7 @@ $(document).ready(function() {
         General.updateImageWidth();
         $('img[alt="cover"]').addClass('cover-image');
         General.addIcons();
-        if (General.isWeixin == true) {
-            if (!!$('.author-image') && $('.copyright').isOnScreenVisible() == true) {
-                console.log('显示了');
-                $('.wechat-notice').css('display', 'block').addClass('fadeInUpBig animated')
-            }
 
-        }
         $('.share h4').on('click', function() {
             $('.share-icons').css('display', 'block').addClass('fadeInUpBig animated')
             $(this).fadeOut(500);
@@ -743,9 +737,19 @@ $(document).ready(function() {
             // $('.nav-header').removeClass('hide').addClass('fadeInDownBig animated')
         }
 
-        if ($('.share-icons').isOnScreenVisible() == false) {
-            $('.share-icons').removeClass('fadeInUpBig animated').css('display', 'none')
-            $('.share h4').css('display', 'block');
+
+        if ($('body').hasClass('post-template')) {
+            if ($('.share-icons').isOnScreenVisible() == false) {
+                $('.share-icons').removeClass('fadeInUpBig animated').css('display', 'none')
+                $('.share h4').css('display', 'block');
+            }
+            if (General.isWeixin == true) {
+                if ($('.copyright').isOnScreenVisible() == true) {
+                    console.log('显示了');
+                    $('.wechat-notice').css('display', 'block').addClass('fadeInUpBig animated')
+                }
+
+            }
         }
 
         if ($('body').hasClass('archive-template') || $('body').hasClass('home-template')) {
