@@ -664,69 +664,52 @@ var General = {
 
 $(document).ready(function() {
     General.init();
-    General.updateImageWidth();
-    // 加载多说评论
-    Duoshuo.init();
-
     if (General.isWeixin == false) {
         scrollme($);
     }
 
-    $('.single-post-inner p:has(img)').each(function() {
-        var _this = $(this);
-        _this.addClass('with-img');
-
-        if (_this.isOnScreenVisible() == true) {
-            _this.addClass('with-img').addClass('already-visible');
-        }
-
-    })
+    // 加载多说评论
 
 
-
-
-
-    $('.post-in-list').each(function() {
-        var _this = $(this);
-        if (_this.isOnScreenVisible() == true) {
-            _this.addClass('already-visible')
-        }
-    })
-    $('.share h4').on('click', function() {
-        $('.share-icons').css('display', 'block').addClass('fadeInUpBig animated')
-        $(this).fadeOut(500);
-
-        // setTimeout(function() {
-        //     $('html,body').animate({
-        //         scrollTop: $('#share-icons').offset().top - $(window).height() / 2
-        //     }, 1000, function() {
-        //         // window.location.hash = '#';
-        //     });
-        // }, 1000)
-
-
-    })
-
-    $('.arrow_down').click(function() {
-        console.log('下滑');
-        $('html,body').animate({
-            scrollTop: $(window).height() - 20
-        }, 1000, function() {
-            // window.location.hash = '#';
-        });
-        return false;
-    })
-
-
+    // 文章页
     if ($('body').hasClass('post-template')) {
-        // console.log('处理图标');
+        General.updateImageWidth();
         $('img[alt="cover"]').addClass('cover-image');
         General.addIcons();
+        if (General.isWeixin == true) {
+            if (!!$('.author-image') && $('.copyright').isOnScreenVisible() == true) {
+                console.log('显示了');
+                $('.wechat-notice').css('display', 'block').addClass('fadeInUpBig animated')
+            }
+
+        }
+        $('.share h4').on('click', function() {
+            $('.share-icons').css('display', 'block').addClass('fadeInUpBig animated')
+            $(this).fadeOut(500);
+
+        })
 
 
+        Duoshuo.init();
+        $('.single-post-inner p:has(img)').each(function() {
+            var _this = $(this);
+            _this.addClass('with-img');
+
+            if (_this.isOnScreenVisible() == true) {
+                _this.addClass('with-img').addClass('already-visible');
+            }
+        })
     }
 
+    // 列表页
+
     if ($('body').hasClass('archive-template') || $('body').hasClass('home-template')) {
+        $('.post-in-list').each(function() {
+            var _this = $(this);
+            if (_this.isOnScreenVisible() == true) {
+                _this.addClass('already-visible')
+            }
+        })
         $('.post-excerpt').each(function() {
             var _this = $(this);
             if (_this.has('img').length == 0) {
@@ -739,6 +722,19 @@ $(document).ready(function() {
     }
 
 
+
+
+
+
+
+    $('.arrow_down').click(function() {
+        $('html,body').animate({
+            scrollTop: $(window).height() - 20
+        }, 1000, function() {
+            // window.location.hash = '#';
+        });
+        return false;
+    })
 
 
     $(window).scroll(function() {
@@ -760,26 +756,6 @@ $(document).ready(function() {
                 }
             })
         }
-
-    if (General.isWeixin == true) {
-        if (!!$('.author-image') && $('.copyright').isOnScreenVisible() == true) {
-            console.log('显示了');
-            $('.wechat-notice').css('display', 'block').addClass('fadeInUpBig animated')
-        }
-
-    }
-
-        // $('.single-post-inner p:has(img)').each(function() {
-        //     var _this = $(this);
-        //     if (_this.isOnScreenVisible() == true && _this.hasClass('already-visible') != true) {
-        //         setTimeout(function() {
-        //             _this.addClass('with-img');
-        //         }, 200)
-
-        //     }
-        // })
-
-
 
     })
 
