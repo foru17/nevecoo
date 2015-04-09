@@ -668,9 +668,6 @@ $(document).ready(function() {
         scrollme($);
     }
 
-    // 加载多说评论
-
-
     // 文章页
     if ($('body').hasClass('post-template')) {
         General.updateImageWidth();
@@ -716,11 +713,6 @@ $(document).ready(function() {
     }
 
 
-
-
-
-
-
     $('.arrow_down').click(function() {
         $('html,body').animate({
             scrollTop: $(window).height() - 20
@@ -756,7 +748,7 @@ $(document).ready(function() {
             $('.post-in-list').each(function() {
                 var _this = $(this);
                 if (_this.isOnScreenVisible() == true && _this.hasClass('already-visible') != true) {
-                    _this.addClass('fadeInUpBig animated')
+                    // _this.addClass('fadeInUpBig animated')
                 }
             })
         }
