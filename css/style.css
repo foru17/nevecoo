@@ -788,6 +788,7 @@ h1 {
   position: relative;
   height: 2rem;
   width: 64%;
+  max-width: 76rem;
   margin: 0 auto; }
 
 .header-wrap {
@@ -1261,4 +1262,5 @@ Copyright (c) 2014 Daniel Eden
   .back-home {
     top: .5rem;
     left: 0; } }
+
 
