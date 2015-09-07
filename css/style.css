@@ -789,8 +789,8 @@ h1 {
 .nav-header-container {
   position: relative;
   height: 2rem;
-  width: 64%;
-  max-width: 76rem;
+  width: 74%;
+  max-width: 76.8rem;
   margin: 0 auto; }
 
 .header-wrap {
@@ -830,8 +830,8 @@ h1 {
     letter-spacing: .8rem; }
 
 .post-info-container {
-  width: 64%;
-  max-width: 76rem;
+  width: 74%;
+  max-width: 76.8rem;
   margin: 13rem auto; }
 
 .post-page-tags {
@@ -1271,8 +1271,6 @@ Copyright (c) 2014 Daniel Eden
     margin-top: 3rem; }
   .home-template .site-footer {
     margin-top: 3rem; }
-  .nav-header-container {
-    width: 80%; }
   .arrow_down {
     display: block; }
   .back-home {
@@ -1285,4 +1283,5 @@ Copyright (c) 2014 Daniel Eden
   #main {
     width: 100%;
     margin: 1rem auto; } }
+
 
