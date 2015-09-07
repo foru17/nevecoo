@@ -53,9 +53,7 @@ Github地址:[Nevecoo](https://github.com/foru17/nevecoo).
 
 支持primejs，方便在文章中高亮不同的代码。
 
-现在Nevecoo 版本号还是0.0.2，在Github上开源，年后将继续优化交互细节，优化前端性能。
-
-
+现在Nevecoo 版本号还是0.0.3，在Github上开源，年后将继续优化交互细节，优化前端性能。
 
 
 ####TO-DO
@@ -67,5 +65,5 @@ Github地址:[Nevecoo](https://github.com/foru17/nevecoo).
 - [ ] ReactJS清凉版
 
 ####更新
-
-* 2015.4.6 : 增加返回首页按钮,重新组织JS代码，jquery.s使用CDN，增加微信浏览器中的提示。
+* 2015.9.4 : 版本0.0.3 增加Tag页面,修正交互细节,修正移动设备上的动画效果,增加多说data-title。
+* 2015.4.6 : 版本0.0.2 增加返回首页按钮,重新组织JS代码，jquery.s使用CDN，增加微信浏览器中的提示。

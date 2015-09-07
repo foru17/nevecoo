@@ -522,6 +522,7 @@ h1 {
   text-align: center;
   width: 100%;
   height: 60%;
+  max-height: 52rem;
   padding: 24px 0;
   box-sizing: border-box;
   z-index: 0; }
@@ -605,7 +606,7 @@ h1 {
     -webkit-animation-iteration-count: infinite;
     animation-iteration-count: infinite; }
 
-.home-template #main, .archive-template #main {
+.home-template #main, .archive-template #main, .tag-template #main {
   margin: 2rem auto; }
 
 .archive-template .arrow_down {
@@ -614,8 +615,8 @@ h1 {
 #main {
   position: relative;
   z-index: 1;
-  width: 64%;
-  max-width: 76rem;
+  width: 74%;
+  max-width: 76.8rem;
   margin: -10rem auto; }
 
 .post-in-list {
@@ -634,6 +635,7 @@ h1 {
 .post-in-list .post-excerpt img {
   display: block;
   width: 100%;
+  min-height: 20rem;
   height: auto; }
 
 .info-mask {
@@ -1179,9 +1181,23 @@ Copyright (c) 2014 Daniel Eden
   100% {
     opacity: 0; } }
 
-.fadeOut {
-  -webkit-animation-name: fadeOut;
-  animation-name: fadeOut; }
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0; }
+
+  100% {
+    opacity: 1; } }
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0; }
+
+  100% {
+    opacity: 1; } }
+
+.fadeIn {
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn; }
 
 @media only screen and (max-width: 361px) {
   .site-footer {
@@ -1233,14 +1249,14 @@ Copyright (c) 2014 Daniel Eden
     width: 90%; }
     .pagination a {
       font-size: 1rem; }
-  .archive-template #header {
+  .archive-template #header, .tag-template #header {
     height: 30%; }
-  .archive-template .home-info-container {
+  .archive-template .home-info-container, .tag-template .home-info-container {
     margin-top: 3rem; }
-    .archive-template .home-info-container h2 {
+    .archive-template .home-info-container h2, .tag-template .home-info-container h2 {
       line-height: 2.2rem;
       font-size: 1.6rem; }
-    .archive-template .home-info-container h4 {
+    .archive-template .home-info-container h4, .tag-template .home-info-container h4 {
       font-size: 1.2rem; }
   .post-meta span.post-tags {
     display: none; }
@@ -1261,6 +1277,12 @@ Copyright (c) 2014 Daniel Eden
     display: block; }
   .back-home {
     top: .5rem;
-    left: 0; } }
+    left: 0; }
+  #header {
+    max-height: 100%; } }
 
+@media only screen and (min-width: 1240px) {
+  #main {
+    width: 100%;
+    margin: 1rem auto; } }
 

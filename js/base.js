@@ -489,13 +489,16 @@ var Duoshuo = {
             var el = document.createElement('div');
             el.setAttribute('data-thread-key', Duoshuo.dataThreadKey);
             el.setAttribute('data-url', location.href);
+            el.setAttribute('data-title', $('title').html());
             DUOSHUO.EmbedThread(el);
             $('.comment-area').append(el);
 
-            setTimeout(function() {
-                $('.comment-area').addClass('toggle-up');
-            }, 500)
+            if ($('.comment-area').has('div').length > 0) {
+                setTimeout(function() {
+                    $('.comment-area').addClass('toggle-up');
+                }, 500)
 
+            }
 
             setTimeout(function() {
                 if ($('.comment-area').isOnScreenVisible() == true) {
@@ -639,11 +642,20 @@ var General = {
 
         button.click(function(e) {
             e.preventDefault();
-            $('html,body').animate({
-                scrollTop: coverHeight - 50
-            }, 1000, function() {
-                window.location.hash = '#';
-            });
+            if ($(window).width() > 768) {
+                $('html,body').animate({
+                    scrollTop: 0
+                }, 600, function() {
+                    window.location.hash = '#';
+                });
+            } else {
+                $('html,body').animate({
+                    scrollTop: coverHeight - 100
+                }, 600, function() {
+                    window.location.hash = '#';
+                });
+            }
+
             console.log('我跳');
         })
     },
@@ -661,11 +673,13 @@ var General = {
 
 }
 
-
 $(document).ready(function() {
     General.init();
     if (General.isWeixin == false) {
-        scrollme($);
+        if ($(window).width() > 768) {
+            console.log('只有大屏和微信上才出动画')
+            scrollme($);
+        }
     }
 
     // 文章页
@@ -675,9 +689,8 @@ $(document).ready(function() {
         General.addIcons();
 
         $('.share h4').on('click', function() {
-            $('.share-icons').css('display', 'block').addClass('fadeInUpBig animated')
-            $(this).fadeOut(500);
-
+            $(this).fadeOut(20);
+            $('.share-icons').css('display', 'block').addClass('fadeIn animated')
         })
 
 
@@ -695,12 +708,17 @@ $(document).ready(function() {
     // 列表页
 
     if ($('body').hasClass('archive-template') || $('body').hasClass('home-template')) {
+
+
+        if ($(window).width() > 768) {}
         $('.post-in-list').each(function() {
             var _this = $(this);
             if (_this.isOnScreenVisible() == true) {
                 _this.addClass('already-visible')
             }
         })
+
+
         $('.post-excerpt').each(function() {
             var _this = $(this);
             if (_this.has('img').length == 0) {

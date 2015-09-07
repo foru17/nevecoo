@@ -20,6 +20,9 @@
     @import "768up";
 } // end of media query
 @media only screen and (min-width: 1240px) {
+    @import "1024up";
+} // end of media query
+@media only screen and (min-width: 1240px) {
     @import "1240up";
 } // end of media query
 @media print {
