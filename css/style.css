@@ -617,7 +617,7 @@ h1 {
   z-index: 1;
   width: 74%;
   max-width: 76.8rem;
-  margin: -10rem auto; }
+  margin: -8rem auto; }
 
 .post-in-list {
   position: relative;
@@ -1282,6 +1282,6 @@ Copyright (c) 2014 Daniel Eden
 @media only screen and (min-width: 1240px) {
   #main {
     width: 100%;
-    margin: 1rem auto; } }
+    margin: -6rem auto; } }
 
 
